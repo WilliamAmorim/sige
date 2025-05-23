@@ -1,0 +1,18 @@
+.card-button {
+    -fx-background-color: #f4f7fa;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b6cb0;
+    -fx-alignment: center;
+    -fx-pref-width: 360;
+    -fx-pref-height: 320;
+}
+
+.card-button:hover {
+    -fx-background-color: #e2e8f0;
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+
+    <!-- Topo azul com título -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="80" spacing="10" style="-fx-background-color: #2B6CB0;" stylesheets="@styles/styles.css">
+            <padding>
+                <Insets bottom="0" left="30" right="0" top="0" />
+            </padding>
+
+            <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="538.0" spacing="2">
+                <Text style="-fx-font-size: 24px; -fx-fill: white; -fx-font-weight: bold;" text="SIGE" />
+                <Text style="-fx-font-size: 14px; -fx-fill: white;" text="Sistema de Gestão Escolar" />
+            </VBox>
+        </HBox>
+    </top>
+
+    <!-- Grade central com botões com ícones -->
+    <center>
+        <GridPane alignment="CENTER" hgap="30" vgap="30">
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="40" />
+            </padding>
+
+            <!-- Cada botão com ícone e texto -->
+            <!-- Dashboard -->
+            <VBox alignment="CENTER" styleClass="card-button">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/96/2b6cb0/dashboard.png" />
+                    </image>
+                </ImageView>
+                <Text text="Dashboard" />
+            </VBox>
+
+            <!-- Alunos -->
+            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/96/2b6cb0/students.png" />
+                    </image>
+                </ImageView>
+                <Text text="Alunos" />
+            </VBox>
+
+            <!-- Horários -->
+            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/96/2b6cb0/calendar.png" />
+                    </image>
+                </ImageView>
+                <Text text="Horários" />
+            </VBox>
+
+            <!-- Turmas -->
+            <VBox alignment="CENTER" styleClass="card-button" GridPane.rowIndex="1">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/96/2b6cb0/classroom.png" />
+                    </image>
+                </ImageView>
+                <Text text="Turmas" />
+            </VBox>
+
+            <!-- Disciplinas -->
+            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/100/2b6cb0/saving-book.png" />
+                    </image>
+                </ImageView>
+                <Text text="Disciplinas" />
+            </VBox>
+
+            <!-- Professor -->
+            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <image>
+                        <Image url="https://img.icons8.com/ios-filled/100/2b6cb0/teacher.png" />
+                    </image>
+                </ImageView>
+                <Text text="Professor" />
+            </VBox>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/oficial2.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" right="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/oficial1.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </bottom>
+
+</BorderPane>
