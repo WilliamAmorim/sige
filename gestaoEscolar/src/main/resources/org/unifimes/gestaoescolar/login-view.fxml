@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500" prefWidth="800" stylesheets="@styles/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unifimes.gestaoescolar.controller.LoginController">
+
+    <!-- Lado esquerdo: login -->
+    <left>
+        <VBox alignment="CENTER" prefWidth="400" spacing="20" style="-fx-background-color: #ffffff;">
+            <VBox alignment="CENTER_LEFT" maxWidth="280" spacing="8">
+                <ImageView fitHeight="61.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/oficial2.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                    </HBox.margin>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+                </ImageView>
+                <Label text="Entrar">
+                    <font><Font name="Segoe UI Bold" size="24" /></font>
+                </Label>
+
+                <Label text="CPF">
+                    <font><Font name="Segoe UI Semibold" size="12" /></font>
+                </Label>
+                <TextField fx:id="cpfField" promptText="Digite seu CPF" styleClass="input" />
+
+                <Label text="Senha">
+                    <font><Font name="Segoe UI Semibold" size="12" /></font>
+                </Label>
+                <PasswordField fx:id="senhaField" promptText="Digite sua senha" styleClass="input" />
+
+                <Button fx:id="loginButton" styleClass="gradient-button" text="Entrar" />
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <CheckBox fx:id="rememberMe" styleClass="link-label" text="Lembrar-me" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Lado direito: mensagem de boas-vindas -->
+    <right>
+        <VBox alignment="CENTER" prefWidth="400" spacing="15" style="-fx-background-color: linear-gradient(to bottom,#2B6CB0,#2B6CB0); -fx-text-fill: white;">
+            <Label text="SIGE: Sistema de Gestão Escolar" textFill="white">
+                <font><Font name="Segoe UI Bold" size="20" /></font>
+            </Label>
+            <Label text="Bem-vindo ao sistema!" textFill="white">
+                <font><Font name="Segoe UI" size="16" /></font>
+            </Label>
+        </VBox>
+    </right>
+
+</BorderPane>
