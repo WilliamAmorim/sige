@@ -7,8 +7,8 @@ Sige: Sistema de Gestão Escolar
 
 ### Módulo 1: Autenticação
 
-- [ ] Login com controle de acesso (Admin / Professor).
-- [ ] Tela de login com persistência (arquivo, SQLite ou outro).
+- [x] Login com controle de acesso (Admin / Professor).
+- [x] Tela de login com persistência (arquivo, SQLite ou outro).
 
 ### Módulo 2: Cadastro
 
