@@ -141,13 +141,12 @@
       
                       <!-- Seleção de Turma -->
                       <HBox alignment="CENTER_LEFT" spacing="10">
-                          <ComboBox fx:id="comboTurmas" prefWidth="200" />
+                          <ComboBox fx:id="comboTurmas1" prefWidth="200" />
                           <Label text="Disciplinas:" />
                       </HBox>
-                  <Separator maxWidth="2.0" minWidth="1.0" orientation="VERTICAL" prefHeight="25.0" />
                   <HBox alignment="CENTER_LEFT" layoutX="301.0" layoutY="10.0" spacing="10">
                      <children>
-                        <ComboBox fx:id="comboTurmas1" prefWidth="200" />
+                        <ComboBox fx:id="comboTurmas" prefWidth="200" />
                         <Label text="Turma:" />
                      </children>
                   </HBox>

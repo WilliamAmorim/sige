@@ -13,7 +13,7 @@ public class ConectionDB {
 
     public boolean connect() {
         try {
-            String url = "jdbc:postgresql://localhost:5432/sige";
+            String url = "jdbc:postgresql://localhost:5432/sige2";
             Properties props = new Properties();
             props.setProperty("user", "postgres");
             props.setProperty("password", "1234");

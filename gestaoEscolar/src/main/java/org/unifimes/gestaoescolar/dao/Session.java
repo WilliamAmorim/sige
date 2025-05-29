@@ -1,16 +1,42 @@
 package org.unifimes.gestaoescolar.dao;
 
+import org.unifimes.gestaoescolar.util.ConectionDB;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.prefs.Preferences;
 
 public class Session {
     private static final Preferences prefs = Preferences.userRoot().node("sige");
 
-    public static boolean login(String cpf, String senha){
-        if(cpf.equals("1234") && senha.equals("admin")){
-            prefs.put("loggedUser","1");
-            return true;
+    public static boolean loginDAO(String cpf, String senha,Boolean rememberMe){
+        ConectionDB conection = new ConectionDB();
+        conection.connect();
+
+        try {
+            PreparedStatement st = conection.getConexao().prepareStatement("SELECT * FROM \"user\" where \"cpf\" = ? and \"senha\" = crypt(?, senha) ");
+            st.setString(1, cpf);
+            st.setString(2,senha);
+
+            ResultSet rs = st.executeQuery();
+
+            while(rs.next()){
+                if(rememberMe){
+                    prefs.put("loggedUser",rs.getString("id"));
+                }
+                return true;
+            }
+
+            rs.close();
+            st.close();
+
+            return false;
+        } catch (SQLException e) {
+            return false;
         }
-        return false;
+
     }
 
     public static void logout() {

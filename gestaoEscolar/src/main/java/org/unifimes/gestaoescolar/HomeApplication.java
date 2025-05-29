@@ -1,9 +1,10 @@
 package org.unifimes.gestaoescolar;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
-import javafx.stage.StageStyle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class HomeApplication extends Application {
     private static Scene SceneLogin;
     private static Scene SceneHome;
     private static Scene SceneDashboard;
+    private static Scene SceneUsuarios;
 
 
     @Override
@@ -36,6 +38,9 @@ public class HomeApplication extends Application {
 
         Parent fxmlDashboard = FXMLLoader.load(getClass().getResource("dashboard-view.fxml"));
         SceneDashboard = new Scene(fxmlDashboard);
+
+        Parent fxmlUsuarios = FXMLLoader.load(getClass().getResource("usuarios-view.fxml"));
+        SceneUsuarios = new Scene(fxmlUsuarios);
 
         SceneLogin = new Scene(fxmlLoader.load(),800,500);
         SceneLogin.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
@@ -67,6 +72,9 @@ public class HomeApplication extends Application {
                 break;
             case "login":
                 stage.setScene(SceneLogin);
+                break;
+            case "usuarios":
+                stage.setScene(SceneUsuarios);
                 break;
         }
 

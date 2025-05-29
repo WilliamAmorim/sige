@@ -72,13 +72,13 @@
             </VBox>
 
             <!-- Professor -->
-            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <VBox fx:id="usuarios_vbox" alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2" GridPane.rowIndex="1">
                 <ImageView fitHeight="50" fitWidth="50">
                     <image>
-                        <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/teacher.png" />
+                        <Image url="https://img.icons8.com/ios-glyphs/90/2b6cb0/group.png" />
                     </image>
                 </ImageView>
-                <Text text="Professor" />
+                <Text text="Usuários" />
             </VBox>
 
 

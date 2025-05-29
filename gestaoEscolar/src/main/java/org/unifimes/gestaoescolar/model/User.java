@@ -6,15 +6,15 @@ public class User {
 
     private String nome;
     private String cpf;
-    private String role; // admin ou professor
+    private String tipo; // admin ou professor
     private String senha;
     private List<Disciplina> disciplinas;//obrigatorio para professor
 
 
-    public User(String nome, String cpf, String role, String senha, List<Disciplina> disciplinas) {
+    public User(String nome, String cpf, String tipo, String senha, List<Disciplina> disciplinas) {
         this.nome = nome;
         this.cpf = cpf;
-        this.role = role;
+        this.tipo = tipo;
         this.senha = senha;
         this.disciplinas = disciplinas;
     }
@@ -43,12 +43,12 @@ public class User {
         this.cpf = cpf;
     }
 
-    public String getRole() {
-        return role;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getSenha() {

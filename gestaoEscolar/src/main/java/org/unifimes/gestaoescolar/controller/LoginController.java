@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import org.unifimes.gestaoescolar.HomeApplication;
 import org.unifimes.gestaoescolar.dao.Session;
-import org.unifimes.gestaoescolar.util.ConectionDB;
 
 public class LoginController {
 
@@ -35,7 +34,7 @@ public class LoginController {
             return;
         }
 
-        if (Session.login(cpf, senha)) {
+        if (Session.loginDAO(cpf, senha,rememberMe.isSelected())) {
             HomeApplication scene = new HomeApplication();
             scene.abrirScene("home");
         } else {

@@ -10,11 +10,17 @@ public class HomeController {
     private VBox dashboad_vbox;
 
     @FXML
+    private VBox usuarios_vbox;
+
+    @FXML
     private VBox sair_vbox;
 
     @FXML
     private void initialize() {
+        HomeApplication scene = new HomeApplication();
         dashboad_vbox.setOnMouseClicked(event -> openScreen("dashboard"));
+
+        usuarios_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("usuarios"));
 
         sair_vbox.setOnMouseClicked(event -> closeSessionScreen());
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.*?>
+<?import javax.swing.table.TableColumn?>
+
+<?import javafx.scene.control.*?>
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="61.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/oficial2.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                    </HBox.margin>
+                </ImageView>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/oficial1.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                    </HBox.margin>
+                </ImageView>
+            </children>
+        </HBox>
+    </bottom>
+
+
+    <top>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="139.0" spacing="10" style="-fx-background-color: #2B6CB0;">
+                    <padding>
+                        <Insets bottom="0" left="30" right="0" top="0" />
+                    </padding>
+                    <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="538.0" spacing="2">
+                            <children>
+                                <Text style="-fx-font-size: 38px; -fx-fill: white; -fx-font-weight: bold;" text="Example">
+                                    <font>
+                                        <Font name="Roboto Regular" size="48.0" />
+                                    </font>
+                                </Text>
+                                <Text style="-fx-font-size: 14px; -fx-fill: white;" text="Sistema de Gestão Escolar">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" styleClass="kpi-card">
+                    <buttons>
+                        <Separator layoutX="301.0" layoutY="10.0" maxWidth="63.0" minWidth="63.0" orientation="VERTICAL" prefHeight="25.0" />
+                        <Button fx:id="voltar_button" maxWidth="30.0" mnemonicParsing="false" prefWidth="30.0" text="&lt; Voltar" />
+                    </buttons>
+                    <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="10.0" />
+                    </VBox.margin>
+                </ButtonBar>
+            </children>
+        </VBox>
+    </top>
+    <stylesheets>
+        <URL value="@styles/styles.css" />
+        <URL value="@styles/dashboard.css" />
+    </stylesheets>
+
+</BorderPane>

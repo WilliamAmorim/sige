@@ -9,14 +9,14 @@ CREATE TYPE status_aluno AS ENUM ('ATIVO', 'INATIVO');
 CREATE TABLE "user" (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    login VARCHAR(50) UNIQUE NOT NULL,
+    cpf VARCHAR(50) UNIQUE NOT NULL,
     senha TEXT NOT NULL,
     tipo tipo_usuario NOT NULL
 );
 
 -- Usuário admin inicial (senha criptografada)
 INSERT INTO "user" (nome, login, senha, tipo)
-VALUES ('Administrador', 'admin', crypt('admin123', gen_salt('bf')), 'ADMIN');
+VALUES ('Administrador', '1234', crypt('admin123', gen_salt('bf')), 'ADMIN');
 
 -- Tabela de disciplinas
 CREATE TABLE disciplina (
@@ -75,3 +75,14 @@ CREATE TABLE frequencia (
     FOREIGN KEY (aluno_id) REFERENCES aluno(id),
     FOREIGN KEY (disciplina_id) REFERENCES disciplina(id)
 );
+
+CREATE TABLE professor_turma_disciplina (
+    professor_id INT,
+    turma_id INT,
+    disciplina_id INT,
+    PRIMARY KEY (professor_id, turma_id, disciplina_id),
+    FOREIGN KEY (professor_id) REFERENCES "user"(id) ON DELETE CASCADE,
+    FOREIGN KEY (turma_id) REFERENCES turma(id) ON DELETE CASCADE,
+    FOREIGN KEY (disciplina_id) REFERENCES disciplina(id) ON DELETE CASCADE
+);
+
