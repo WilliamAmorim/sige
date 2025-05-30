@@ -78,6 +78,8 @@ Sige: Sistema de Gestão Escolar
   ![Print 01](prints/06.png)
 
   ## 12 - Rodar o Projeto
+  
+  ![Print 01](prints/08.png)
     
 
 
