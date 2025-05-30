@@ -1,5 +1,7 @@
 package org.unifimes.gestaoescolar.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
@@ -7,7 +9,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.unifimes.gestaoescolar.HomeApplication;
+import org.unifimes.gestaoescolar.dao.DisciplinaDAO;
+import org.unifimes.gestaoescolar.model.Disciplina;
+import org.unifimes.gestaoescolar.model.User;
+
+import java.util.List;
 
 public class DashboarController {
     @FXML
@@ -23,7 +31,7 @@ public class DashboarController {
     private TableColumn<?, ?> colSituacao;
 
     @FXML
-    private ComboBox<String> comboTurmas;
+    private ComboBox<Disciplina> comboTurmas;
 
     @FXML
     private Label lblAprovados;
@@ -46,9 +54,15 @@ public class DashboarController {
     @FXML
     private void initialize() {
         voltar_button.setOnMouseClicked(event -> openScreen("home"));
+        getDisciplinas();
+    }
 
-        comboTurmas.getItems().addAll("1ºA", "2ºB", "3ºC");
-        comboTurmas.getSelectionModel().selectFirst();
+    private void getDisciplinas(){
+        DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
+        List<Disciplina> disciplinas = disciplinaDAO.findDisciplina(false);
+
+        ObservableList<Disciplina> observableDisciplina = FXCollections.observableArrayList(disciplinas);
+        comboTurmas.setItems(observableDisciplina);
     }
 
     private void openScreen(String screenName) {

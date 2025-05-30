@@ -11,24 +11,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/unifimes/gestaoescolar/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/unifimes/gestaoescolar/HomeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/unifimes/gestaoescolar/HomeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/aluno-list-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/cadastro-aluno-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/HelloApplication.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/HomeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/HomeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/util/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/util/ConectionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/dashboard-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sqlDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Disciplina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HelloApplication.main()].executor": "Run",
-    "Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HomeApplication.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "B:/Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HelloApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HomeApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="B:\Workspace_pessoal\programacaoDesktop\gestaoEscolar\src\main\resources\org\unifimes\gestaoescolar\images" />

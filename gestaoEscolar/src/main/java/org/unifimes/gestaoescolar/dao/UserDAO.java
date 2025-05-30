@@ -19,7 +19,6 @@ public class UserDAO {
 
         try {
             Statement st = conection.getConexao().createStatement();
-
             ResultSet rs = st.executeQuery("SELECT * FROM \"user\" ");
             while (rs.next()) {
                 User user = new User(rs.getString("nome"),rs.getString("cpf"),rs.getString("tipo"),null,null);
