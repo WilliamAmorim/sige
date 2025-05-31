@@ -59,7 +59,7 @@ public class DashboarController {
 
     private void getDisciplinas(){
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
-        List<Disciplina> disciplinas = disciplinaDAO.findDisciplina(false);
+        List<Disciplina> disciplinas = disciplinaDAO.getDisciplinas();
 
         ObservableList<Disciplina> observableDisciplina = FXCollections.observableArrayList(disciplinas);
         comboTurmas.setItems(observableDisciplina);

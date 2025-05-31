@@ -1,12 +1,22 @@
 package org.unifimes.gestaoescolar.model;
 
 public class Disciplina {
+    private Integer id;
     private String nome;
     private int cargaHoraria;
 
-    public Disciplina(int cargaHoraria, String nome) {
+    public Disciplina(Integer id,int cargaHoraria, String nome) {
+        this.id = id;
         this.cargaHoraria = cargaHoraria;
         this.nome = nome;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {

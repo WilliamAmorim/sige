@@ -52,7 +52,6 @@ public class UsuariosController {
         UserDAO search = new UserDAO();
         List<User> users = search.getUser();
         ObservableList<User> observableUsers = FXCollections.observableArrayList(users);
-        System.out.println("observableUsers:"+observableUsers);
         user_tableView.setItems(observableUsers);
     }
 

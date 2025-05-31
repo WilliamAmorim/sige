@@ -16,15 +16,15 @@ public class ConectionDB {
             String url = "jdbc:postgresql://localhost:5432/sige2";
             Properties props = new Properties();
             props.setProperty("user", "postgres");
-            props.setProperty("password", "1234");
+            props.setProperty("password", "12343");
             props.setProperty("ssl", "false"); // desative SSL para ambiente local
 
             this.conexao = DriverManager.getConnection(url, props);
             System.out.println("Conexão bem-sucedida!");
             return true;
         } catch (Exception ex) {
-            System.out.println("Erro de conexão: " + ex.getMessage());
-            ex.printStackTrace();
+            //System.out.println("Erro de conexão: " + ex.getMessage());
+            System.out.println("Não foi possivel conectar no banco");
             return false;
         }
     }
