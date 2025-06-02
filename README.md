@@ -13,7 +13,7 @@ Sige: Sistema de Gestão Escolar
 ### Módulo 2: Cadastro
 
 - [ ] Alunos: Nome, matrícula, data de nascimento, turma, status (ativo/inativo).
-- [ ] Professores: Nome, CPF, disciplinas.
+- [x] Professores: Nome, CPF, disciplinas.
 - [ ] Disciplinas: Nome, carga horária.
 - [ ] Turmas: Código, nome, turno, ano, disciplinas associadas.
 
