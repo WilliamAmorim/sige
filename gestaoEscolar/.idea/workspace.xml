@@ -13,9 +13,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/DisciplinaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Disciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/util/ConectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/util/ConectionDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

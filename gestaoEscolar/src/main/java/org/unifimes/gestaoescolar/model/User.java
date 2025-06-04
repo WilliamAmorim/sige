@@ -3,16 +3,21 @@ package org.unifimes.gestaoescolar.model;
 import java.util.List;
 
 public class User {
+    public enum TipoUsuario {
+        ADMIN,
+        PROFESSOR
+    }
+
 
     private Integer id;
     private String nome;
     private String cpf;
-    private String tipo; // admin ou professor
+    private TipoUsuario  tipo; // admin ou professor
     private String senha;
     private List<Disciplina> disciplinas;//obrigatorio para professor
 
 
-    public User(Integer id,String nome, String cpf, String tipo, String senha, List<Disciplina> disciplinas) {
+    public User(Integer id,String nome, String cpf, TipoUsuario  tipo, String senha, List<Disciplina> disciplinas) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -53,11 +58,11 @@ public class User {
         this.cpf = cpf;
     }
 
-    public String getTipo() {
+    public TipoUsuario  getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoUsuario  tipo) {
         this.tipo = tipo;
     }
 

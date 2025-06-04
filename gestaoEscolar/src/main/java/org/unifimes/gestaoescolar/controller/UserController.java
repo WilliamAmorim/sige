@@ -6,10 +6,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.unifimes.gestaoescolar.HomeApplication;
 import org.unifimes.gestaoescolar.dao.DisciplinaDAO;
 import org.unifimes.gestaoescolar.dao.UserDAO;
 import org.unifimes.gestaoescolar.model.Disciplina;
 import org.unifimes.gestaoescolar.model.User;
+import org.unifimes.gestaoescolar.model.User.TipoUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,24 +20,19 @@ public class UserController {
 
     @FXML private Button confirmarCadastro_button;
 
-
-    // Tabela de usuários
     @FXML private TableView<User> user_tableView;
     @FXML private TableColumn<User, String> nome_column;
     @FXML private TableColumn<User, String> cpf_column;
     @FXML private TableColumn<User, String> tipo_column;
 
-    // Campos do formulário
     @FXML private TextField nomeTextField;
     @FXML private TextField cpfTextField;
     @FXML private PasswordField senhaField;
     @FXML private ComboBox<String> tipoComboBox;
 
-    // Disciplinas
     @FXML private ComboBox<Disciplina> disciplinaComboBox;
     @FXML private ListView<Disciplina> disciplinasListView;
 
-    // Botões
     @FXML private Button pesquisar_button;
     @FXML private Button voltar_button;
 
@@ -47,9 +44,7 @@ public class UserController {
         showTableUser();
         showDisciplinas();
 
-        // Inicializa tipos
         tipoComboBox.setItems(FXCollections.observableArrayList("Administrador", "Professor"));
-
         disciplinasListView.setItems(disciplinas);
 
         disciplinasListView.setOnMouseClicked(event -> {
@@ -68,9 +63,6 @@ public class UserController {
             }
         });
 
-
-
-        // Lógica de botões
         pesquisar_button.setOnAction(e -> pesquisarUsuarios());
         voltar_button.setOnAction(e -> voltar());
     }
@@ -87,18 +79,33 @@ public class UserController {
     private void confirmarCadastro() {
         String nome = nomeTextField.getText();
         String cpf = cpfTextField.getText();
-        String tipo = tipoComboBox.getValue();
+        String tipoStr = tipoComboBox.getValue();
+        String senha = senhaField.getText();
 
-        if (nome.isEmpty() || cpf.isEmpty() || tipo == null) {
+        if (nome.isEmpty() || cpf.isEmpty() || tipoStr == null || senha.isEmpty()) {
             showAlert("Erro", "Todos os campos devem ser preenchidos!");
             return;
         }
 
-        User usuario = new User(null, nome, cpf, tipo, null, new ArrayList<>(disciplinas));
+        TipoUsuario tipo;
+        try {
+            tipo = tipoFromString(tipoStr);
+        } catch (IllegalArgumentException e) {
+            showAlert("Erro", "Tipo de usuário inválido.");
+            return;
+        }
 
-        usuarios.add(usuario);
+        User usuario = new User(null, nome, cpf, tipo, senha, new ArrayList<>(disciplinas));
 
-        // Limpa campos
+        UserDAO userDao = new UserDAO();
+        Boolean result = userDao.addUser(usuario);
+        if (result) {
+            usuarios.add(usuario);
+        } else {
+            showAlert("Erro", "Não foi possível cadastrar");
+            return;
+        }
+
         nomeTextField.clear();
         cpfTextField.clear();
         senhaField.clear();
@@ -107,13 +114,12 @@ public class UserController {
     }
 
     private void pesquisarUsuarios() {
-        // Aqui você pode implementar lógica de busca
         showAlert("Pesquisar", "Função de pesquisa ainda não implementada.");
     }
 
     private void voltar() {
-        // Navegação para a tela anterior
-        showAlert("Voltar", "Função de voltar ainda não implementada.");
+        HomeApplication scene = new HomeApplication();
+        scene.abrirScene("home");
     }
 
     private void showAlert(String titulo, String mensagem) {
@@ -124,48 +130,55 @@ public class UserController {
         alert.showAndWait();
     }
 
-    private void showTableUser(){
-        // Configura as colunas com base nos atributos da classe User
+    private void showTableUser() {
         cpf_column.setCellValueFactory(new PropertyValueFactory<>("cpf"));
         nome_column.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        tipo_column.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        tipo_column.setCellValueFactory(cellData -> new SimpleStringProperty(
+                switch (cellData.getValue().getTipo()) {
+                    case ADMIN -> "Administrador";
+                    case PROFESSOR -> "Professor";
+                }
+        ));
 
-        // Busca os usuários e popula a TableView
         UserDAO search = new UserDAO();
         List<User> users = search.getUser();
-        //ObservableList<User> observableUsers = FXCollections.observableArrayList(users);
         usuarios.setAll(users);
         user_tableView.setItems(usuarios);
     }
 
-    private void showDisciplinas(){
+    private void showDisciplinas() {
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
         List<Disciplina> disciplinas = disciplinaDAO.getDisciplinas();
 
         ObservableList<Disciplina> observableDisciplina = FXCollections.observableArrayList(disciplinas);
         disciplinaComboBox.setItems(observableDisciplina);
-        //disciplinasListView.setItems(observableDisciplina);
     }
 
     private void preencherFormulario(User user) {
         nomeTextField.setText(user.getNome());
         cpfTextField.setText(user.getCpf());
-        tipoComboBox.setValue(user.getTipo());
+        senhaField.setText(user.getSenha());
 
-        // Atualiza botão para "Editar"
-        confirmarCadastro_button.setText("Editar");
+        if (user.getTipo() != null) {
+            String tipoStr = switch (user.getTipo()) {
+                case ADMIN -> "Administrador";
+                case PROFESSOR -> "Professor";
+            };
+            tipoComboBox.setValue(tipoStr);
+        }
 
-        // Se quiser também popular as disciplinas associadas ao usuário
-        // Aqui estou assumindo que o User tem um campo List<Disciplina> disciplinas (caso tenha)
         if (user.getDisciplinas() != null) {
-            System.out.println("Tem disciplinas"+user.getDisciplinas());
             disciplinas.setAll(user.getDisciplinas());
         } else {
-            System.out.println("Não tem disciplinas"+user.getDisciplinas());
             disciplinas.clear();
         }
     }
 
-
-
+    private TipoUsuario tipoFromString(String tipo) {
+        return switch (tipo.toLowerCase()) {
+            case "administrador" -> TipoUsuario.ADMIN;
+            case "professor" -> TipoUsuario.PROFESSOR;
+            default -> throw new IllegalArgumentException("Tipo inválido: " + tipo);
+        };
+    }
 }

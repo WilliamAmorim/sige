@@ -4,10 +4,7 @@ import org.unifimes.gestaoescolar.model.Disciplina;
 import org.unifimes.gestaoescolar.model.User;
 import org.unifimes.gestaoescolar.util.ConectionDB;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +23,8 @@ public class UserDAO {
                 Statement st = conexao.createStatement();
                 ResultSet rs = st.executeQuery("SELECT * FROM \"user\" ");
                 while (rs.next()) {
-                    List<Disciplina> disciplinas = disciplinaDAO.getDisciplinasByUserId(rs.getInt("id"));
-                    User user = new User(rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"), rs.getString("tipo"), null, disciplinas);
+                    List<Disciplina> disciplinas = disciplinaDAO.getDisciplinasByProfessorId(rs.getInt("id"));
+                    User user = new User(rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"), User.TipoUsuario.valueOf(rs.getString("tipo")), null, disciplinas);
                     users.add(user);
                 }
                 rs.close();
@@ -38,6 +35,48 @@ public class UserDAO {
         }
 
         return users;
+    }
+
+    public boolean addUser(User user) {
+        ConectionDB conection = new ConectionDB();
+        conection.connect();
+
+        try {
+            // Instrução para retornar o ID gerado
+            PreparedStatement st = conection.getConexao().prepareStatement(
+                    "INSERT INTO \"user\" (nome, cpf, senha, tipo) " +
+                            "VALUES (?, ?, crypt(?, gen_salt('bf')), ?::tipo_usuario) RETURNING id;"
+            );
+
+            st.setString(1, user.getNome());
+            st.setString(2, user.getCpf());
+            st.setString(3, user.getSenha());
+            st.setString(4, user.getTipo().name()); // usa .name() porque o tipo na tabela é ENUM
+
+            ResultSet rs = st.executeQuery();
+            int userId = -1;
+
+            if (rs.next()) {
+                userId = rs.getInt("id");
+            }
+
+            rs.close();
+            st.close();
+
+            // Se o ID foi recuperado com sucesso, associa as disciplinas
+            if (userId > 0 && user.getDisciplinas() != null) {
+                DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
+                for (Disciplina disciplina : user.getDisciplinas()) {
+                    disciplinaDAO.addDisciplinaByUser(userId, disciplina.getId());
+                }
+            }
+
+            return userId > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Exception: " + e.getMessage());
+            return false;
+        }
     }
 
 }
