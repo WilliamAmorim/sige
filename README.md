@@ -12,7 +12,7 @@ Sige: Sistema de Gestão Escolar
 
 ### Módulo 2: Cadastro
 
-- [ ] Alunos: Nome, matrícula, data de nascimento, turma, status (ativo/inativo).
+- [ ] [tela] Alunos: Nome, matrícula, data de nascimento, turma, status (ativo/inativo).
 - [x] Professores: Nome, CPF, disciplinas.
 - [ ] Disciplinas: Nome, carga horária.
 - [ ] Turmas: Código, nome, turno, ano, disciplinas associadas.
@@ -21,15 +21,15 @@ Sige: Sistema de Gestão Escolar
 
 ### Módulo 3: Lançamento de Notas e Frequência
 
-- [ ]  Lançamento de notas por turma e disciplina que lescionam.
-- [ ]  Registro de notas por bimestre.
-- [ ]  Registro de faltas.
+- [ ]  [tela] Lançamento de notas por turma e disciplina que lescionam.
+- [ ]  [tela] Registro de notas por bimestre.
+- [ ]  [tela] Registro de faltas.
 
 ### Módulo 4: Relatórios
 
-- [ ] Boletim individual de aluno(PDF ou visualização).
-- [ ] Listagem de alunos por turma.
-- [ ] Frequencia por disciplina.
+- [ ] [tela dashboad] Boletim individual de aluno(PDF ou visualização).
+- [ ] [tela dashboar] Listagem de alunos por turma.
+- [ ] [tela dashboard] Frequencia por disciplina.
 
 ## Entregas Final - 12/06 e 13/06
 
