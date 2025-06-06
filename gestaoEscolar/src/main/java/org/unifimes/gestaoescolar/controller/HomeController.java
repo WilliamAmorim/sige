@@ -13,6 +13,9 @@ public class HomeController {
     private VBox usuarios_vbox;
 
     @FXML
+    private VBox alunos_vbox;
+
+    @FXML
     private VBox sair_vbox;
 
     @FXML
@@ -21,6 +24,8 @@ public class HomeController {
         dashboad_vbox.setOnMouseClicked(event -> openScreen("dashboard"));
 
         usuarios_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("usuarios"));
+
+        alunos_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("alunos"));
 
         sair_vbox.setOnMouseClicked(event -> closeSessionScreen());
 

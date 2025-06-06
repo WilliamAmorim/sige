@@ -20,6 +20,7 @@ public class HomeApplication extends Application {
     private static Scene SceneHome;
     private static Scene SceneDashboard;
     private static Scene SceneUsuarios;
+    private static Scene SceneAlunos;
 
 
     @Override
@@ -41,6 +42,9 @@ public class HomeApplication extends Application {
 
         Parent fxmlUsuarios = FXMLLoader.load(getClass().getResource("usuarios-view.fxml"));
         SceneUsuarios = new Scene(fxmlUsuarios);
+
+        Parent fxmlAlunos = FXMLLoader.load(getClass().getResource("alunos-view.fxml"));
+        SceneAlunos = new Scene(fxmlAlunos);
 
         SceneLogin = new Scene(fxmlLoader.load(),800,500);
         SceneLogin.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
@@ -75,6 +79,9 @@ public class HomeApplication extends Application {
                 break;
             case "usuarios":
                 stage.setScene(SceneUsuarios);
+                break;
+            case "alunos":
+                stage.setScene(SceneAlunos);
                 break;
         }
 

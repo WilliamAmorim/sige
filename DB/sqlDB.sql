@@ -59,7 +59,8 @@ CREATE TABLE nota (
     id SERIAL PRIMARY KEY,
     aluno_id INT,
     disciplina_id INT,
-    bimestre INT,
+    descricao VARCHAR(100),
+    lancamento DATE,
     valor DECIMAL(5,2),
     FOREIGN KEY (aluno_id) REFERENCES aluno(id),
     FOREIGN KEY (disciplina_id) REFERENCES disciplina(id)
@@ -70,8 +71,8 @@ CREATE TABLE frequencia (
     id SERIAL PRIMARY KEY,
     aluno_id INT,
     disciplina_id INT,
-    bimestre INT,
     faltas INT,
+    data DATE,
     FOREIGN KEY (aluno_id) REFERENCES aluno(id),
     FOREIGN KEY (disciplina_id) REFERENCES disciplina(id)
 );
