@@ -7,6 +7,14 @@ public class Nota {
     private int bimestre;
     private double valor;
 
+    public Nota(int id, int alunoId, int disciplinaId, int bimestre, double valor) {
+        this.id = id;
+        this.alunoId = alunoId;
+        this.disciplinaId = disciplinaId;
+        this.bimestre = bimestre;
+        this.valor = valor;
+    }
+
     public int getId() {
         return id;
     }

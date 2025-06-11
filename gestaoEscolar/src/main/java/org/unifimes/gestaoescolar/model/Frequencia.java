@@ -1,11 +1,21 @@
 package org.unifimes.gestaoescolar.model;
 
+import javafx.scene.control.CheckBox;
+
 public class Frequencia {
     private int id;
     private int alunoId;
     private int disciplinaId;
-    private int bimestre;
-    private int faltas;
+    private boolean falta;
+    private String data;
+
+    public Frequencia(int id, int alunoId, int disciplinaId, boolean falta, String data) {
+        this.id = id;
+        this.alunoId = alunoId;
+        this.disciplinaId = disciplinaId;
+        this.falta = falta;
+        this.data = data;
+    }
 
     public int getId() {
         return id;
@@ -31,19 +41,19 @@ public class Frequencia {
         this.disciplinaId = disciplinaId;
     }
 
-    public int getFaltas() {
-        return faltas;
+    public boolean isFalta() {
+        return falta;
     }
 
-    public void setFaltas(int faltas) {
-        this.faltas = faltas;
+    public void setFalta(boolean falta) {
+        this.falta = falta;
     }
 
-    public int getBimestre() {
-        return bimestre;
+    public String getData() {
+        return data;
     }
 
-    public void setBimestre(int bimestre) {
-        this.bimestre = bimestre;
+    public void setData(String data) {
+        this.data = data;
     }
 }

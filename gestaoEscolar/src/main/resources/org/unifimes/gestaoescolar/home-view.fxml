@@ -32,23 +32,23 @@
             </VBox>
 
             <!-- Alunos -->
-            <VBox fx:id="alunos_vbox" alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1">
+            <VBox fx:id="notas_vbox" alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1">
                 <ImageView fitHeight="50" fitWidth="50">
                     <image>
-                        <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/students.png" />
+                        <Image url="https://img.icons8.com/ios-glyphs/90/2b6cb0/report-card.png" />
                     </image>
                 </ImageView>
-                <Text text="Alunos" />
+                <Text text="Notas" />
             </VBox>
 
             <!-- Horários -->
-            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2">
+            <VBox fx:id="vbox_faltas" alignment="CENTER" styleClass="card-button" GridPane.columnIndex="2">
                 <ImageView fitHeight="50" fitWidth="50">
                     <image>
                         <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/calendar.png" />
                     </image>
                 </ImageView>
-                <Text text="Horários" />
+                <Text text="Frequencia" />
             </VBox>
 
             <!-- Turmas -->
@@ -62,13 +62,13 @@
             </VBox>
 
             <!-- Disciplinas -->
-            <VBox alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox fx:id="alunos_vbox" alignment="CENTER" styleClass="card-button" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <ImageView fitHeight="50" fitWidth="50">
                     <image>
-                        <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/saving-book.png" />
+                        <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/students.png" />
                     </image>
                 </ImageView>
-                <Text text="Disciplinas" />
+                <Text text="Alunos" />
             </VBox>
 
             <!-- Professor -->

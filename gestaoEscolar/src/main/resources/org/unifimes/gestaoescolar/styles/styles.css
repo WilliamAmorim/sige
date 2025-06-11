@@ -26,3 +26,11 @@
     -fx-pref-width: 180;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0.1, 0, 2);
 }
+
+.chart-pie.data0.chart-pie {
+    -fx-pie-color: #4CAF50; /* Verde - Aprovados */
+}
+
+.chart-pie.data1.chart-pie {
+    -fx-pie-color: #F44336; /* Vermelho - Reprovados */
+}

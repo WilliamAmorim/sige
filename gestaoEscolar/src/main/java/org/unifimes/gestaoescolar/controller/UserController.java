@@ -45,8 +45,8 @@ public class UserController {
         showDisciplinas();
 
         tipoComboBox.setItems(FXCollections.observableArrayList("Administrador", "Professor"));
-        disciplinasListView.setItems(disciplinas);
 
+        disciplinasListView.setItems(disciplinas);
         disciplinasListView.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 Disciplina disciplinaSelecionada = disciplinasListView.getSelectionModel().getSelectedItem();

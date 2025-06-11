@@ -21,6 +21,9 @@ public class HomeApplication extends Application {
     private static Scene SceneDashboard;
     private static Scene SceneUsuarios;
     private static Scene SceneAlunos;
+    private static Scene SceneFaltas;
+    private static Scene SceneNotas;
+    private static Scene SceneTurmas;
 
 
     @Override
@@ -45,6 +48,15 @@ public class HomeApplication extends Application {
 
         Parent fxmlAlunos = FXMLLoader.load(getClass().getResource("alunos-view.fxml"));
         SceneAlunos = new Scene(fxmlAlunos);
+
+        Parent fxmlFaltas = FXMLLoader.load(getClass().getResource("faltas-view.fxml"));
+        SceneFaltas = new Scene(fxmlFaltas);
+
+        Parent fxmlnotas = FXMLLoader.load(getClass().getResource("notas-view.fxml"));
+        SceneNotas = new Scene(fxmlnotas);
+
+        Parent fxmlturmas = FXMLLoader.load(getClass().getResource("turmas-view.fxml"));
+        SceneNotas = new Scene(fxmlnotas);
 
         SceneLogin = new Scene(fxmlLoader.load(),800,500);
         SceneLogin.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
@@ -82,6 +94,12 @@ public class HomeApplication extends Application {
                 break;
             case "alunos":
                 stage.setScene(SceneAlunos);
+                break;
+            case "faltas":
+                stage.setScene(SceneFaltas);
+                break;
+            case "notas":
+                stage.setScene(SceneNotas);
                 break;
         }
 

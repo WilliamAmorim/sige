@@ -19,6 +19,13 @@ public class HomeController {
     private VBox sair_vbox;
 
     @FXML
+    private VBox vbox_faltas;
+
+
+    @FXML
+    private VBox notas_vbox;
+
+    @FXML
     private void initialize() {
         HomeApplication scene = new HomeApplication();
         dashboad_vbox.setOnMouseClicked(event -> openScreen("dashboard"));
@@ -26,6 +33,10 @@ public class HomeController {
         usuarios_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("usuarios"));
 
         alunos_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("alunos"));
+
+        vbox_faltas.setOnMouseClicked(Mouse -> scene.abrirScene("faltas"));
+
+        notas_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("notas"));
 
         sair_vbox.setOnMouseClicked(event -> closeSessionScreen());
 

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -75,6 +76,8 @@
                     <buttons>
                         <Button fx:id="pesquisar_button" maxWidth="30.0" mnemonicParsing="false" prefWidth="30.0" text="Pesquisar" />
                         <TextField alignment="TOP_RIGHT" promptText="Pesquisar" />
+                  <Separator layoutX="960.0" layoutY="10.0" maxWidth="63.0" minWidth="63.0" orientation="VERTICAL" prefHeight="25.0" />
+                  <ComboBox fx:id="turma_comboBox" prefWidth="150.0" promptText="Turma" />
                         <Separator layoutX="301.0" layoutY="10.0" maxWidth="63.0" minWidth="63.0" orientation="VERTICAL" prefHeight="25.0" />
                         <Button fx:id="voltar_button" layoutX="643.0" layoutY="10.0" maxWidth="30.0" mnemonicParsing="false" prefWidth="30.0" text="&lt; Voltar" />
                     </buttons>
@@ -101,11 +104,10 @@
             <children>
                 <TableView fx:id="user_tableView" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                        <TableColumn fx:id="nome_column" prefWidth="75.0" text="Nome" />
-                        <TableColumn fx:id="cpf_column" prefWidth="75.0" text="Matrícula" />
-                        <TableColumn fx:id="tipo_column" prefWidth="75.0" text="Nascimento" />
-                  <TableColumn fx:id="tipo_column1" prefWidth="75.0" text="Status" />
-                  <TableColumn fx:id="tipo_column11" prefWidth="75.0" text="Turma" />
+                        <TableColumn fx:id="nome_col" prefWidth="75.0" text="Nome" />
+                        <TableColumn fx:id="matricula_col" prefWidth="75.0" text="Matrícula" />
+                        <TableColumn fx:id="nascimento_col" prefWidth="75.0" text="Nascimento" />
+                  <TableColumn fx:id="status_col" prefWidth="75.0" text="Status" />
                     </columns>
                     <GridPane.margin>
                         <Insets right="10.0" />
@@ -122,9 +124,9 @@
                             </font>
                         </Label>
                         <TextField fx:id="nomeTextField" promptText="Nome" />
-                        <TextField fx:id="matriculaTextField" promptText="Matricula" />
-                  <TextField fx:id="nascimentoTextField1" layoutX="10.0" layoutY="82.0" promptText="Nascimento" />
-                        <ComboBox fx:id="statusComboBox" prefWidth="150.0" promptText="Status" />
+                        <TextField fx:id="matriculaTextField" editable="false" promptText="Matricula" />
+                  <DatePicker fx:id="nascimento_textField" promptText="Nascimento" />
+                  <ComboBox fx:id="statusComboBox" prefWidth="150.0" promptText="Status" />
                         <Separator prefWidth="200.0" />
                         <Button fx:id="confirmarCadastro_button" mnemonicParsing="false" onAction="#confirmarCadastro" text="Confirmar" />
                     </children>

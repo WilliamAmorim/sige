@@ -3,17 +3,25 @@ package org.unifimes.gestaoescolar.model;
 import java.util.List;
 
 public class Turma {
-    private String id;
+    private int id;
     private String nome;
     private String turno;
     private int ano;
     private List<Disciplina> disciplinas;
 
-    public String getId() {
+    public Turma(int id, String nome, String turno, int ano, List<Disciplina> disciplinas) {
+        this.id = id;
+        this.nome = nome;
+        this.turno = turno;
+        this.ano = ano;
+        this.disciplinas = disciplinas;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -47,5 +55,10 @@ public class Turma {
 
     public void setDisciplinas(List<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
+    }
+
+    @Override
+    public String toString() {
+        return nome; // Ou: return nome + " (" + cargaHoraria + "h)";
     }
 }

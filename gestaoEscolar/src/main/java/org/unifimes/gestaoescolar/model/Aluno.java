@@ -3,11 +3,29 @@ package org.unifimes.gestaoescolar.model;
 import java.time.LocalDate;
 
 public class Aluno {
+    private int id;
     private String nome;
     private String matricula;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String turma;
     private boolean ativo;
+
+    public Aluno(int id,String nome, String matricula, String dataNascimento, String turma, boolean ativo) {
+        this.id = id;
+        this.nome = nome;
+        this.matricula = matricula;
+        this.dataNascimento = dataNascimento;
+        this.turma = turma;
+        this.ativo = ativo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -25,11 +43,11 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
