@@ -28,8 +28,11 @@ public class Session {
                     prefs.put("loggedUser",rs.getString("id"));
 
                 }
+                prefs.remove("tipoUser");
+                prefs.remove("userId");
                 prefs.put("tipoUser",rs.getString("tipo"));
                 prefs.put("userId", String.valueOf(rs.getInt("id")));
+
                 return true;
             }
 
@@ -62,7 +65,7 @@ public class Session {
     }
 
     public static boolean isLoggedAdmin(){
-        System.out.println("Tipo Usuário"+prefs.get("tipoUser", null));
+        System.out.println("Tipo Usuário:"+prefs.get("tipoUser", null));
         if(Objects.equals(prefs.get("tipoUser", null), "ADMIN")) {
             return true;
         }

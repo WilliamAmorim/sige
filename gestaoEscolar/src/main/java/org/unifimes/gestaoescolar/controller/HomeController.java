@@ -46,11 +46,11 @@ public class HomeController {
 
         sair_vbox.setOnMouseClicked(event -> closeSessionScreen());
 
-        if(!Session.isLoggedAdmin()){
-            turma_vbox.setVisible(false);
-            usuarios_vbox.setVisible(false);
-            alunos_vbox.setVisible(false);
-        }
+//        if(!Session.isLoggedAdmin()){
+//            turma_vbox.setVisible(false);
+//            usuarios_vbox.setVisible(false);
+//            alunos_vbox.setVisible(false);
+//        }
 
     }
 

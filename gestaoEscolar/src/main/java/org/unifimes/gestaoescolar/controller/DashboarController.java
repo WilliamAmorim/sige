@@ -17,8 +17,11 @@ import org.unifimes.gestaoescolar.dao.DisciplinaDAO;
 import org.unifimes.gestaoescolar.dao.FrequenciaDAO;
 import org.unifimes.gestaoescolar.dao.TurmaDAO;
 import org.unifimes.gestaoescolar.model.*;
+import org.unifimes.gestaoescolar.util.PdfGenerator;
+
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,6 +106,7 @@ public class DashboarController {
     private int disciplinaSeleciona;
     private int alunoSelecionado;
     private int semestreSelecionado = 0;
+    private List<NotaTable> NotasTableBoletim;
 
     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
@@ -114,6 +118,7 @@ public class DashboarController {
         voltar_button.setOnMouseClicked(event -> openScreen("home"));
 
         limpar_action.setOnMouseClicked(event -> limpar());
+
 
         semestre_comboBox.getItems().addAll("1", "2","3","4","5","6","7");
         semestre_comboBox.setOnAction(event -> {
@@ -295,7 +300,7 @@ public class DashboarController {
     private void getBoletim(){
         AlunoDAO alunoDAO = new AlunoDAO();
         List<NotaTable> listaNotas = alunoDAO.getAlunoBoletimByTurma(turmaSelecionada,alunoSelecionado,semestreSelecionado);
-
+        NotasTableBoletim = listaNotas;
         ObservableList<NotaTable> dados = FXCollections.observableArrayList();
 
         dados.addAll(listaNotas);
@@ -308,6 +313,7 @@ public class DashboarController {
         nota04_col.setCellValueFactory(new PropertyValueFactory<>("nota04"));
 
         boletim_table.setItems(dados);
+
     }
 
     private void getFrequencia(){
@@ -340,4 +346,10 @@ public class DashboarController {
         HomeApplication scene = new HomeApplication();
         scene.abrirScene(screenName);
     }
+
+    private void gerarPdf(){
+
+        PdfGenerator.gerarBoletim(NotasTableBoletim, "notas.pdf");
+    }
+
 }

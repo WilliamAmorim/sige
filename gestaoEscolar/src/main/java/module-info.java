@@ -5,6 +5,7 @@ module org.unifimes.gestaoescolar {
     requires java.prefs;
     requires jdk.jconsole;
     requires org.postgresql.jdbc;
+    requires org.apache.pdfbox;
 
 
     opens org.unifimes.gestaoescolar to javafx.fxml;

@@ -103,7 +103,7 @@ public class DisciplinaDAO {
                     filtroDisciplina+
                     "WHERE td.turma_id = ? \n ");
 
-            if(!Session.isLoggedAdmin()) {
+            if(!Session.isLoggedAdmin() && Session.isLoggedUser()) {
                 st.setInt(1,Integer.parseInt(Session.userLoggedId()));
                 st.setInt(2,turma);
             }else{

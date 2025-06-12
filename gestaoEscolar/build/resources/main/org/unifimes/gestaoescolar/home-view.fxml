@@ -48,7 +48,7 @@
                         <Image url="https://img.icons8.com/ios-filled/50/2b6cb0/calendar.png" />
                     </image>
                 </ImageView>
-                <Text text="Frequencia" />
+                <Text text="Frequência" />
             </VBox>
 
             <!-- Turmas -->
