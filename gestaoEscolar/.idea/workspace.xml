@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="gestaoEscolar.main:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffe0fb0e-f99f-44d3-b99d-cf15a189717b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/FaltasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DB/sqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../DB/sqlDB.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,29 +17,32 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/unifimes/gestaoescolar/HomeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/unifimes/gestaoescolar/HomeApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/home-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/org/unifimes/gestaoescolar/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/module-info.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/module-info.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/module-info.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/HomeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/HomeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/AlunosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/AlunosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/DashboarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/FaltasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/FaltasController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/NotasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/NotasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/TurmasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/TurmasController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/AlunoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/AlunoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/DisciplinaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/DisciplinaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/FrequenciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/FrequenciaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/TurmaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/TurmaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Frequencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Frequencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Nota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Turma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unifimes/gestaoescolar/model/Turma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/alunos-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/alunos-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/dashboard-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/faltas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/faltas-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/notas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/notas-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/turmas-fxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unifimes/gestaoescolar/turmas-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +77,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HomeApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build gestaoEscolar.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HelloApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HomeApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;B:/Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HomeApplication.executor": "Run",
+    "Gradle.Build gestaoEscolar.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HelloApplication.main()].executor": "Run",
+    "Gradle.gestaoEscolar [:org.unifimes.gestaoescolar.HomeApplication.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "B:/Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="B:\Workspace_pessoal\programacaoDesktop\gestaoEscolar\src\main\resources\org\unifimes\gestaoescolar\images" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HomeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="HomeApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.unifimes.gestaoescolar.HomeApplication" />
       <module name="gestaoEscolar.main" />
       <option name="VM_PARAMETERS" value="--module-path &quot;B:\Arquivos de programas\java\javafx-sdk-24.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
@@ -108,11 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.HomeApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

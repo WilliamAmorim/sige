@@ -17,8 +17,9 @@ ext {
     junitVersion = '5.10.2'
 }
 
-sourceCompatibility = '22'
-targetCompatibility = '22'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -55,4 +56,16 @@ jlink {
 
 jlinkZip {
     group = 'distribution'
+}
+
+task fatJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier = 'all'
+    manifest {
+        attributes 'Main-Class': 'org.unifimes.gestaoescolar.HelloApplication'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
 }

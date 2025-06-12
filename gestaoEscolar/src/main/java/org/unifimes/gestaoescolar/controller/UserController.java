@@ -19,25 +19,23 @@ import java.util.List;
 public class UserController {
 
     @FXML private Button confirmarCadastro_button;
-
     @FXML private TableView<User> user_tableView;
     @FXML private TableColumn<User, String> nome_column;
     @FXML private TableColumn<User, String> cpf_column;
     @FXML private TableColumn<User, String> tipo_column;
-
     @FXML private TextField nomeTextField;
     @FXML private TextField cpfTextField;
     @FXML private PasswordField senhaField;
     @FXML private ComboBox<String> tipoComboBox;
-
     @FXML private ComboBox<Disciplina> disciplinaComboBox;
     @FXML private ListView<Disciplina> disciplinasListView;
-
     @FXML private Button pesquisar_button;
     @FXML private Button voltar_button;
 
     private final ObservableList<User> usuarios = FXCollections.observableArrayList();
     private final ObservableList<Disciplina> disciplinas = FXCollections.observableArrayList();
+
+    private User usuarioSelecionado = null;
 
     @FXML
     public void initialize() {
@@ -57,9 +55,19 @@ public class UserController {
         });
 
         user_tableView.setOnMouseClicked(event -> {
-            User selectedUser = user_tableView.getSelectionModel().getSelectedItem();
-            if (selectedUser != null) {
-                preencherFormulario(selectedUser);
+            if (event.getClickCount() == 2) {
+                User selectedUser = user_tableView.getSelectionModel().getSelectedItem();
+
+                if (selectedUser != null) {
+                    if (usuarioSelecionado != null && usuarioSelecionado.equals(selectedUser)) {
+                        limparCampos();
+                        showAlert("Modo edição cancelado", "Você saiu do modo de edição.");
+                    } else {
+                        usuarioSelecionado = selectedUser;
+                        preencherFormulario(usuarioSelecionado);
+                        confirmarCadastro_button.setText("Salvar Edição");
+                    }
+                }
             }
         });
 
@@ -83,7 +91,7 @@ public class UserController {
         String senha = senhaField.getText();
 
         if (nome.isEmpty() || cpf.isEmpty() || tipoStr == null || senha.isEmpty()) {
-            showAlert("Erro", "Todos os campos devem ser preenchidos!");
+            showAlert("Erro de Validação", "Por favor, preencha todos os campos obrigatórios.");
             return;
         }
 
@@ -91,30 +99,45 @@ public class UserController {
         try {
             tipo = tipoFromString(tipoStr);
         } catch (IllegalArgumentException e) {
-            showAlert("Erro", "Tipo de usuário inválido.");
+            showAlert("Erro de Tipo", "Tipo de usuário inválido.");
             return;
         }
-
-        User usuario = new User(null, nome, cpf, tipo, senha, new ArrayList<>(disciplinas));
 
         UserDAO userDao = new UserDAO();
-        Boolean result = userDao.addUser(usuario);
-        if (result) {
-            usuarios.add(usuario);
+        boolean result;
+
+        if (usuarioSelecionado == null) {
+            User usuario = new User(null, nome, cpf, tipo, senha, new ArrayList<>(disciplinas));
+            result = userDao.addUser(usuario);
+            if (result) {
+                usuarios.add(usuario);
+                showAlert("Sucesso", "Usuário cadastrado com sucesso!");
+            } else {
+                showAlert("Erro ao Cadastrar", "Não foi possível cadastrar o usuário.");
+                return;
+            }
         } else {
-            showAlert("Erro", "Não foi possível cadastrar");
-            return;
+            usuarioSelecionado.setNome(nome);
+            usuarioSelecionado.setCpf(cpf);
+            usuarioSelecionado.setSenha(senha);
+            usuarioSelecionado.setTipo(tipo);
+            usuarioSelecionado.setDisciplinas(new ArrayList<>(disciplinas));
+
+            result = userDao.updateUser(usuarioSelecionado);
+            if (result) {
+                showAlert("Sucesso", "Usuário atualizado com sucesso!");
+                showTableUser();
+            } else {
+                showAlert("Erro ao Atualizar", "Não foi possível atualizar os dados do usuário.");
+                return;
+            }
         }
 
-        nomeTextField.clear();
-        cpfTextField.clear();
-        senhaField.clear();
-        tipoComboBox.setValue(null);
-        disciplinas.clear();
+        limparCampos();
     }
 
     private void pesquisarUsuarios() {
-        showAlert("Pesquisar", "Função de pesquisa ainda não implementada.");
+        showAlert("Aviso", "A funcionalidade de pesquisa ainda não está implementada.");
     }
 
     private void voltar() {
@@ -148,9 +171,8 @@ public class UserController {
 
     private void showDisciplinas() {
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
-        List<Disciplina> disciplinas = disciplinaDAO.getDisciplinas();
-
-        ObservableList<Disciplina> observableDisciplina = FXCollections.observableArrayList(disciplinas);
+        List<Disciplina> disciplinasList = disciplinaDAO.getDisciplinas();
+        ObservableList<Disciplina> observableDisciplina = FXCollections.observableArrayList(disciplinasList);
         disciplinaComboBox.setItems(observableDisciplina);
     }
 
@@ -172,6 +194,16 @@ public class UserController {
         } else {
             disciplinas.clear();
         }
+    }
+
+    private void limparCampos() {
+        nomeTextField.clear();
+        cpfTextField.clear();
+        senhaField.clear();
+        tipoComboBox.setValue(null);
+        disciplinas.clear();
+        usuarioSelecionado = null;
+        confirmarCadastro_button.setText("Cadastrar");
     }
 
     private TipoUsuario tipoFromString(String tipo) {

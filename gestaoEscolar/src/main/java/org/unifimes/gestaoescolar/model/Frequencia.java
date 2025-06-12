@@ -8,13 +8,23 @@ public class Frequencia {
     private int disciplinaId;
     private boolean falta;
     private String data;
-
-    public Frequencia(int id, int alunoId, int disciplinaId, boolean falta, String data) {
+    private int bimestre;
+    
+    public Frequencia(int id, int alunoId, int disciplinaId, boolean falta, String data, int bimestre) {
         this.id = id;
         this.alunoId = alunoId;
         this.disciplinaId = disciplinaId;
         this.falta = falta;
         this.data = data;
+        this.bimestre = bimestre;
+    }
+
+    public int getBimestre() {
+        return bimestre;
+    }
+
+    public void setBimestre(int bimestre) {
+        this.bimestre = bimestre;
     }
 
     public int getId() {

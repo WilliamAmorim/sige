@@ -131,6 +131,8 @@
                                     <children>
                                         <ComboBox fx:id="disciplinaComboBox" prefWidth="150.0" promptText="Disciplinas" />
                                         <Button mnemonicParsing="false" onAction="#adicionarDisciplina" text="Adicionar" />
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <Button mnemonicParsing="false" onAction="#addNovaDisciplina" text="Nova Disciplina" />
                                     </children>
                                 </HBox>
                                 <ListView fx:id="disciplinasListView" prefWidth="200.0" />

@@ -56,7 +56,7 @@ public class HomeApplication extends Application {
         SceneNotas = new Scene(fxmlnotas);
 
         Parent fxmlturmas = FXMLLoader.load(getClass().getResource("turmas-view.fxml"));
-        SceneNotas = new Scene(fxmlnotas);
+        SceneTurmas = new Scene(fxmlturmas);
 
         SceneLogin = new Scene(fxmlLoader.load(),800,500);
         SceneLogin.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
@@ -100,6 +100,9 @@ public class HomeApplication extends Application {
                 break;
             case "notas":
                 stage.setScene(SceneNotas);
+                break;
+            case "turmas":
+                stage.setScene(SceneTurmas);
                 break;
         }
 

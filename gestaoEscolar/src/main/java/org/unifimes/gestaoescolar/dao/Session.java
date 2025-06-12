@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.prefs.Preferences;
 
 public class Session {
@@ -25,7 +26,10 @@ public class Session {
             while(rs.next()){
                 if(rememberMe){
                     prefs.put("loggedUser",rs.getString("id"));
+
                 }
+                prefs.put("tipoUser",rs.getString("tipo"));
+                prefs.put("userId", String.valueOf(rs.getInt("id")));
                 return true;
             }
 
@@ -41,13 +45,27 @@ public class Session {
 
     public static void logout() {
         prefs.remove("loggedUser");
+        prefs.remove("tipoUser");
+        prefs.remove("userId");
     }
 
     public static String getLoggedUser() {
-        return prefs.get("loggedUser", null); // retorna null se não existir
+        return prefs.get("loggedUser", null);
     }
 
     public static boolean isLoggedUser(){
         return prefs.get("loggedUser", null) != null;
+    }
+
+    public static String userLoggedId(){
+        return prefs.get("userId", null);
+    }
+
+    public static boolean isLoggedAdmin(){
+        System.out.println("Tipo Usuário"+prefs.get("tipoUser", null));
+        if(Objects.equals(prefs.get("tipoUser", null), "ADMIN")) {
+            return true;
+        }
+        return false;
     }
 }

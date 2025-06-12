@@ -34,3 +34,6 @@
 .chart-pie.data1.chart-pie {
     -fx-pie-color: #F44336; /* Vermelho - Reprovados */
 }
+.table-row-cell.falta-marcada {
+    -fx-background-color: #ffcccc; /* cor de fundo clara vermelha */
+}

@@ -98,7 +98,56 @@ public class NotasController {
         });
 
         confirmarNota.setOnAction(actionEvent -> confirmarNota());
+
+//        alunos_table.setRowFactory(tv -> new TableRow<NotaTable>() {
+//            @Override
+//            protected void updateItem(NotaTable aluno, boolean empty) {
+//                super.updateItem(aluno, empty);
+//                if (aluno == null || empty) {
+//                    setStyle("");
+//                } else {
+//                    if (aluno.getMedia() < 6.0) {
+//                        setStyle("-fx-background-color: #ffb3b3;"); // Vermelho claro
+//                    } else {
+//                        setStyle("");
+//                    }
+//                }
+//            }
+//        });
+
+        nota01_col.setCellValueFactory(new PropertyValueFactory<>("nota01"));
+        nota02_col.setCellValueFactory(new PropertyValueFactory<>("nota02"));
+        nota03_col.setCellValueFactory(new PropertyValueFactory<>("nota03"));
+        nota04_col.setCellValueFactory(new PropertyValueFactory<>("nota04"));
+        media_col.setCellValueFactory(new PropertyValueFactory<>("media"));
+
+        TableCellFactoryComCor(nota01_col);
+        TableCellFactoryComCor(nota02_col);
+        TableCellFactoryComCor(nota03_col);
+        TableCellFactoryComCor(nota04_col);
+        TableCellFactoryComCor(media_col);
     }
+
+    private void TableCellFactoryComCor(TableColumn<NotaTable, Double> column) {
+        column.setCellFactory(col -> new TableCell<NotaTable, Double>() {
+            @Override
+            protected void updateItem(Double nota, boolean empty) {
+                super.updateItem(nota, empty);
+                if (empty || nota == null) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(String.format("%.1f", nota));
+                    if (nota >= 6.0) {
+                        setStyle("-fx-background-color: #d4edda; -fx-text-fill: black;");
+                    } else {
+                        setStyle("-fx-background-color: #f8d7da; -fx-text-fill: black;");
+                    }
+                }
+            }
+        });
+    }
+
 
     private void confirmarNota(){
         if(turmaSelecionada != 0 && disciplinaSeleciona != 0) {
@@ -106,7 +155,7 @@ public class NotasController {
                 showAlert("Aluno Invalido", "Todas as notas já foram lançadas");
             } else {
                 double notaValor = parseDouble(nota_textField.getText());
-                if (notaValor > 0 && notaValor < 10) {
+                if (notaValor > 0 && notaValor <= 10) {
                     Nota nota = new Nota(0, alunoSelecionadoTable.getId(), disciplinaSeleciona, getBimestreAtualDesde(turmaObj.getAno()), notaValor);
                     AlunoDAO alunosDAO = new AlunoDAO();
                     boolean resultado = alunosDAO.addAlunoNota(nota);

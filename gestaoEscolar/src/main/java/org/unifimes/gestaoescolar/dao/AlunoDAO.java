@@ -236,6 +236,30 @@ public class AlunoDAO {
         return notas;
     }
 
+    public String[] getTotalAlunos(int turma,int bimestre,List<Disciplina> disciplinas,List<Aluno> alunos){
+        int totalAprovados = 0;
+        int totalReprovados = 0;
+        for(Aluno aluno : alunos){
+                List<NotaTable> boletim = getAlunoBoletimByTurma(turma,aluno.getId(),bimestre);
+                if(isAprovadoEmTodasAsDisciplinas(boletim)){
+                    totalAprovados++;
+                }else{
+                    totalReprovados++;
+                }
+        }
+        return new String[]{String.valueOf(alunos.size()), String.valueOf(totalAprovados), String.valueOf(totalReprovados)};
+    }
+
+    public boolean isAprovadoEmTodasAsDisciplinas(List<NotaTable> notas) {
+        for (NotaTable nota : notas) {
+            if (nota.getMedia() < 6.0) {
+                return false; // encontrou uma disciplina com média menor que 6
+            }
+        }
+        return true; // todas as médias são maiores ou iguais a 6
+    }
+
+
     public String[] getTotalAlunos(int turma,Integer bimestre,Integer disciplina){
         String[] dados = {"","","",""};
 
@@ -332,5 +356,9 @@ public class AlunoDAO {
                 : LocalDate.of(ano, 12, 31);
 
         return fim.format(FORMATTER);
+    }
+
+    public boolean updateAluno(Aluno aluno) {
+        return true;
     }
 }

@@ -21,6 +21,10 @@ public class HomeController {
     @FXML
     private VBox vbox_faltas;
 
+    @FXML
+    private VBox turma_vbox;
+
+
 
     @FXML
     private VBox notas_vbox;
@@ -38,7 +42,15 @@ public class HomeController {
 
         notas_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("notas"));
 
+        turma_vbox.setOnMouseClicked(Mouse -> scene.abrirScene("turmas"));
+
         sair_vbox.setOnMouseClicked(event -> closeSessionScreen());
+
+        if(!Session.isLoggedAdmin()){
+            turma_vbox.setVisible(false);
+            usuarios_vbox.setVisible(false);
+            alunos_vbox.setVisible(false);
+        }
 
     }
 

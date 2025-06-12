@@ -1,5 +1,6 @@
 package org.unifimes.gestaoescolar.dao;
 
+import org.unifimes.gestaoescolar.model.Aluno;
 import org.unifimes.gestaoescolar.model.Disciplina;
 import org.unifimes.gestaoescolar.model.User;
 import org.unifimes.gestaoescolar.util.ConectionDB;
@@ -77,6 +78,14 @@ public class UserDAO {
             System.out.println("Exception: " + e.getMessage());
             return false;
         }
+    }
+
+    public boolean updateUser(User user) {
+        // exemplo básico de implementação
+        String sql = "UPDATE alunos SET nome = ?, data_nascimento = ?, status = ? WHERE id = ?";
+        // executar a query com os valores...
+
+        return true;
     }
 
 }

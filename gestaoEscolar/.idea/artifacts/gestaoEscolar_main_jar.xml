@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="gestaoEscolar.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gestaoEscolar_main_jar</output-path>
+    <root id="archive" name="gestaoEscolar.main.jar">
+      <element id="module-output" name="gestaoEscolar.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/22.0.1/e44ea58d6df3e5ecd0b12585ab2f538164156266/javafx-controls-22.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/22.0.1/a970f89174b87c6118bf54080bc5f83b9afb30e9/javafx-base-22.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/22.0.1/10ba6397b58cc946303eee1d05436f29c2797245/javafx-graphics-22.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/638ec33f363a94d41a4f03c3e7d3dcfba64e402d/checker-qual-3.42.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/22.0.1/e9bc66443f462933bd5ee27937669abcd916f605/javafx-fxml-22.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.7.3/24f3e9f7231428cd20eb4dde00dd3fce44e05464/postgresql-42.7.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/jdk.jsobject.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.input.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Arquivos de programas/java/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/22.0.1/ef7d028cc4b8402f40ce276e60947ef44e4ff805/javafx-base-22.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/22.0.1/5e1dad5c22b8708efd8e2c96e2392fe477e3d0be/javafx-graphics-22.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/22.0.1/ba22d267afcb39741620c6cefd9d4a92405bcab9/javafx-controls-22.0.1-win.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -40,7 +40,7 @@ public class DisciplinaDAO {
 
         try {
             PreparedStatement st = conection.getConexao().prepareStatement(
-                    "INSERT INTO \"disciplina\" (nome, carga_horaria) VALUES (?, ?),"
+                    "INSERT INTO \"disciplina\" (nome, carga_horaria) VALUES (?, ?);"
             );
             st.setString(1, disciplina.getNome());
             st.setInt(2, disciplina.getCargaHoraria());
@@ -90,12 +90,25 @@ public class DisciplinaDAO {
         ConectionDB conection = new ConectionDB();
         conection.connect();
         PreparedStatement st;
+        String filtroDisciplina = "";
+        if(!Session.isLoggedAdmin()) {
+            filtroDisciplina = " JOIN \"professor_disciplina\" pd ON  d.id = pd.disciplina_id AND pd.professor_id = ? ";
+        }
+
+
         try {
             st = conection.getConexao().prepareStatement("SELECT DISTINCT d.id, d.nome, d.carga_horaria\n" +
                     "FROM \"turma_disciplina\" td \n" +
                     "JOIN \"disciplina\"  d ON td.disciplina_id = d.id\n" +
+                    filtroDisciplina+
                     "WHERE td.turma_id = ? \n ");
-            st.setInt(1,turma);
+
+            if(!Session.isLoggedAdmin()) {
+                st.setInt(1,Integer.parseInt(Session.userLoggedId()));
+                st.setInt(2,turma);
+            }else{
+                st.setInt(1,turma);
+            }
 
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
@@ -147,6 +160,29 @@ public class DisciplinaDAO {
                     "INSERT INTO \"professor_disciplina\" (professor_id, disciplina_id) VALUES (?, ?);"
             );
             st.setInt(1, userId);
+            st.setInt(2, disciplinaId);
+
+            int rowsInserted = st.executeUpdate();
+
+            st.close();
+            return rowsInserted > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Exception: " + e.getMessage());
+            return false;
+        }
+
+    }
+
+    public boolean addDisciplinaByTurma(int turmaId, int disciplinaId){
+        ConectionDB conection = new ConectionDB();
+        conection.connect();
+
+        try {
+            PreparedStatement st = conection.getConexao().prepareStatement(
+                    "INSERT INTO \"turma_disciplina\" (turma_id, disciplina_id) VALUES (?, ?);"
+            );
+            st.setInt(1, turmaId);
             st.setInt(2, disciplinaId);
 
             int rowsInserted = st.executeUpdate();
